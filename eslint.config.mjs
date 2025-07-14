@@ -2,6 +2,8 @@ import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
 import js from "@eslint/js";
+import tsParser from "@typescript-eslint/parser";
+import tsPlugin from "@typescript-eslint/eslint-plugin";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -16,16 +18,16 @@ const eslintConfig = [
   {
     files: ["**/*.ts", "**/*.tsx"],
     languageOptions: {
-      parser: require("@typescript-eslint/parser"),
+      parser: tsParser,
       parserOptions: {
         project: "./tsconfig.json",
       },
     },
     plugins: {
-      "@typescript-eslint": require("@typescript-eslint/eslint-plugin"),
+      "@typescript-eslint": tsPlugin,
     },
     rules: {
-      "@typescript-eslint/no-explicit-any": "warn", // Warn instead of error for 'any' types
+      "@typescript-eslint/no-explicit-any": "warn",
       "@typescript-eslint/no-unused-vars": [
         "warn",
         {
@@ -34,7 +36,6 @@ const eslintConfig = [
           caughtErrorsIgnorePattern: "^_",
         },
       ],
-      // Add other TypeScript rules as needed
     },
   },
   {
