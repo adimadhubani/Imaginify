@@ -123,7 +123,7 @@ const MobileNav = () => {
                   })}
                 </div>
 
-                {/* Footer with sign out */}
+                Footer with sign out
                 <div className="p-4 border-t border-purple-200/50">
                   <div className="flex justify-center">
                     <UserButton 
