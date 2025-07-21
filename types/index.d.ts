@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+// import { type DynamicRoute } from 'next';
 
 // ====== USER PARAMS
 declare type CreateUserParams = {
@@ -114,7 +115,9 @@ declare type CreateUserParams = {
   };
   
   declare type SearchParamProps = {
-    params: { id: string; type: TransformationTypeKey };
+    params: { id: string;
+       type: TransformationTypeKey
+       };
     searchParams: { [key: string]: string | string[] | undefined };
   };
   
@@ -136,3 +139,6 @@ declare type CreateUserParams = {
     hasDownload?: boolean;
     setIsTransforming?: React.Dispatch<React.SetStateAction<boolean>>;
   };
+
+
+ 
