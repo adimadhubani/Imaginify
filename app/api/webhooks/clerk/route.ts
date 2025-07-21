@@ -1,12 +1,12 @@
 import { Webhook } from 'svix';
 import { NextRequest } from 'next/server';
-import { connectDB } from '@/lib/database/mongoose';
+import { connectToDatabase } from '@/lib/database/mongoose';
 import User from '@/lib/database/models/user.model';
 
 export async function POST(req: NextRequest) {
   try {
     // Connect to MongoDB
-    await connectDB();
+    await connectToDatabase();
 
     // Verify Svix webhook
     const svix_id = req.headers.get('svix-id');
